@@ -7,6 +7,7 @@ TagManager:
   - moeda
   - mau
   - bom
+  - fim
   layers:
   - Default
   - TransparentFX

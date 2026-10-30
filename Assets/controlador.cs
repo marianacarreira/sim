@@ -4,17 +4,11 @@ public class controlador : MonoBehaviour
 {
     public void reiniciar()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("nivel1");
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void passou()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        UnityEngine.SceneManagement.SceneManager.LoadScene("nivel2");
     }
 }

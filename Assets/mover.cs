@@ -9,15 +9,12 @@ public class mover : MonoBehaviour
     public AudioClip sommoeda;
     public AudioClip sombarreira;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        jogador.AddForce(0, 0, 5);
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        jogador.AddForce(0, 0, 1);
+        jogador.AddForce(0, 0, 3);
 
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -27,6 +24,14 @@ public class mover : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             jogador.AddForce(55, 0, 0);
+        }
+        if (transform.position.y < -1)
+        {
+            FindAnyObjectByType<controlador>().reiniciar();
+        }
+        if (gameObject.tag=="fim")
+        {
+            FindAnyObjectByType<controlador>().passou();
         }
     }
     private void OnCollisionEnter(Collision barreira)
