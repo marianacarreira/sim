@@ -29,10 +29,6 @@ public class mover : MonoBehaviour
         {
             FindAnyObjectByType<controlador>().reiniciar();
         }
-        if (gameObject.tag=="fim")
-        {
-            FindAnyObjectByType<controlador>().passou();
-        }
     }
     private void OnCollisionEnter(Collision barreira)
     {   
@@ -44,6 +40,10 @@ public class mover : MonoBehaviour
                 FindAnyObjectByType<controlador>().reiniciar();
             }
             somjogo.PlayOneShot(sombarreira);
+        }
+        if (barreira.gameObject.tag == "fim")
+        {
+            FindAnyObjectByType<controlador>().passou();
         }
     }
     private void OnTriggerEnter(Collider moeda)
