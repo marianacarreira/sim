@@ -14,16 +14,19 @@ public class mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jogador.AddForce(0, 0, 3);
+        jogador.AddForce(0, 0, 10);
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.touchCount > 0)
         {
-            jogador.AddForce(-55, 0, 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            jogador.AddForce(55, 0, 0);
+            Touch toque = Input.GetTouch(0);
+            if (toque.position.x<Screen.width / 2)
+            {
+                jogador.AddForce(-55, 0, 0);
+            }
+            else
+            {
+                jogador.AddForce(55, 0, 0);
+            }
         }
         if (transform.position.y < -1)
         {
