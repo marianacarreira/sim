@@ -14,7 +14,7 @@ public class mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jogador.AddForce(0, 0, 10);
+        jogador.AddForce(0, 0, 13);
 
         if (Input.touchCount > 0)
         {
