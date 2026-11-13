@@ -1346,6 +1346,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1992608981985160842, guid: a44beace9eb69f74fb8014950da48744, type: 3}
   m_PrefabInstance: {fileID: 1702327981324256226}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &820892259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 820892260}
+  - component: {fileID: 820892261}
+  m_Layer: 0
+  m_Name: controlador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &820892260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820892259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1749407189}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820892261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820892259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09da5774bcb44c24baf3d8b674d88443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::controlador2
 --- !u!1001 &839148910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2662,7 +2706,7 @@ GameObject:
   - component: {fileID: 1749407187}
   - component: {fileID: 1749407186}
   - component: {fileID: 1749407185}
-  - component: {fileID: 1749407184}
+  - component: {fileID: 1749407191}
   - component: {fileID: 1749407190}
   m_Layer: 0
   m_Name: jogador
@@ -2671,24 +2715,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1749407184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749407183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ed8ebbd37fec34b847875165eaf28a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  jogador: {fileID: 1749407185}
-  vida: {fileID: 1174153700}
-  pontos: {fileID: 1220869586}
-  somjogo: {fileID: 1749407190}
-  sommoeda: {fileID: 8300000, guid: a71cfb4c581a7f64d84dbf987d3a26cc, type: 3}
-  sombarreira: {fileID: 8300000, guid: d96285ce5f4a15548b6aeed07debe2d6, type: 3}
 --- !u!54 &1749407185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2806,7 +2832,8 @@ Transform:
   m_LocalPosition: {x: 0.8261719, y: 1, z: 0.26173007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 820892260}
   m_Father: {fileID: 1650080777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1749407190
@@ -2906,6 +2933,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1749407191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749407183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52b006f119c9244084baed158f7610d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::mover2
+  jogador: {fileID: 1749407185}
+  vida: {fileID: 1174153700}
+  pontos: {fileID: 1220869586}
+  somjogo: {fileID: 1749407190}
+  sommoeda: {fileID: 8300000, guid: a71cfb4c581a7f64d84dbf987d3a26cc, type: 3}
+  sombarreira: {fileID: 8300000, guid: d96285ce5f4a15548b6aeed07debe2d6, type: 3}
 --- !u!4 &1797684755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5448123941809399585, guid: a5c1bb3c941a9dd4bb56e8245ce8d27c, type: 3}
@@ -3027,50 +3072,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5585670725009031235, guid: f3ce3e75177bc66459b51b434fbccc69, type: 3}
   m_PrefabInstance: {fileID: 1370073136959564678}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1949167245
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1949167246}
-  - component: {fileID: 1949167247}
-  m_Layer: 0
-  m_Name: controlador
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1949167246
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949167245}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1919745226}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1949167247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949167245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afce3a74a728fd140993ac33b72c827f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!4 &1982307790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2651627723051651731, guid: e55a6393e4432c84c999bf1950dfb4e1, type: 3}
@@ -3227,10 +3228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5585670725009031235, guid: f3ce3e75177bc66459b51b434fbccc69, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949167246}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ce3e75177bc66459b51b434fbccc69, type: 3}
 --- !u!1001 &1702327981324256226
